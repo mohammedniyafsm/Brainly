@@ -14,6 +14,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.Login = exports.signUp = void 0;
 const userModel_1 = __importDefault(require("../models/userModel"));
+const jwt_1 = require("../utils/jwt");
 const signUp = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
     const { username, email, password } = req.body;
     try {
@@ -23,7 +24,8 @@ const signUp = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         }
         const user = new userModel_1.default({ username, email, password });
         yield user.save();
-        res.status(201).json({ message: "Account created successfully" });
+        const token = yield (0, jwt_1.generateToken)(user._id.toString());
+        res.status(201).json({ message: "Account created successfully", token });
     }
     catch (error) {
         res.status(500).json({ message: "Server error", error });
