@@ -1,5 +1,5 @@
 import { Request, Response } from 'express';
-import User  from '../models/userModel';
+import User ,{IUser} from '../models/userModel';
 import { generateToken } from '../utils/jwt';
 
 export const signUp = async (req: Request, res: Response): Promise<void> => {
@@ -12,7 +12,7 @@ export const signUp = async (req: Request, res: Response): Promise<void> => {
        
     }
 
-    const user = new User({ username, email, password });
+    const user  = new User({ username, email, password });
     await user.save();
     
 
@@ -24,7 +24,6 @@ export const signUp = async (req: Request, res: Response): Promise<void> => {
   }
 };
 
-export const Login=async(req:Request,res:Response)=>{
+export const Login=async(req:Request,res:Response): Promise<void>=>{
     
-
 }

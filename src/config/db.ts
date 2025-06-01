@@ -23,4 +23,3 @@ export const connectToDatabase=async():Promise<void>=>{
     }
 
 }
-
