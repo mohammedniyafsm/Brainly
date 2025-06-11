@@ -1,8 +1,8 @@
-import mongoose ,{Document,Schema,model} from "mongoose";
+import mongoose ,{Document,Model,Schema,model} from "mongoose";
 
 const contentType = ['documents','tweet', 'youtube', 'link']
 
-interface IContent extends Document {
+export interface IContent extends Document {
     userId:mongoose.Types.ObjectId;
     type : string;
     link :string;
@@ -41,5 +41,5 @@ const contentSchema : Schema <IContent> = new Schema ({
   ],
 })
 
-// const Content : <IContent> Schema =mongoose.model<IContent>('Content',contentSchema);
-// export default Content;
+const Content : Model <IContent> = mongoose.model<IContent>('Content',contentSchema);
+export default Content;
