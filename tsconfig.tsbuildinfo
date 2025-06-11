@@ -1,1 +1,1 @@
-{"root":["./src/index.ts","./src/config/db.ts","./src/controller/usercontroller.ts","./src/models/usermodel.ts","./src/routes/userroute.ts","./src/utils/jwt.ts"],"version":"5.8.3"}
+{"root":["./src/index.ts","./src/config/db.ts","./src/controller/usercontroller.ts","./src/middleware/authmiddleware.ts","./src/models/usermodel.ts","./src/routes/userroute.ts","./src/utils/jwt.ts"],"version":"5.8.3"}

@@ -6,6 +6,7 @@ export interface IUser extends Document {
   username: string;
   email: string;
   password: string;
+  comparePassword(password: string): Promise<boolean>;
 }
 
 const UserSchema: Schema<IUser> = new Schema({
@@ -23,7 +24,7 @@ UserSchema.pre('save',async function (next){
  next();
 })
 
-UserSchema.methods.comparePassword = async function (password: string): Promise<boolean> {
+  UserSchema.methods.comparePassword = async function (password: string): Promise<boolean> {
   return bcrypt.compare(password, this.password);
 };
 
