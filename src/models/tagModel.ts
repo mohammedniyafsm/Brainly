@@ -16,7 +16,7 @@ const TagSchema : Schema <ITag>  =new Schema ({
     },
     userId : {
         type : Schema.Types.ObjectId,
-        ref : 'Tag',
+        ref : 'User',
         required : true,
     }
 
