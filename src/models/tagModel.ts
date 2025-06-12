@@ -1,7 +1,9 @@
 import mongoose , {Document,Model,Schema,model} from "mongoose";
 
-interface ITag extends Document {
+export interface ITag extends Document {
+    _id:mongoose.Types.ObjectId,
     name:string,
+    userId:mongoose.Types.ObjectId,
 }
 
 
@@ -11,6 +13,11 @@ const TagSchema : Schema <ITag>  =new Schema ({
         required : true,
         unique: true,
         trim: true,
+    },
+    userId : {
+        type : Schema.Types.ObjectId,
+        ref : 'Tag',
+        required : true,
     }
 
 })
