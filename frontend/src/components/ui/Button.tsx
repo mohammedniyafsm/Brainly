@@ -15,7 +15,7 @@ const sizeStyle = {
     "lg" : "py-6 px-8",
 }
 
-const defaultStyle = "rounded-md flex items-center m-4"
+const defaultStyle = "rounded-md flex items-center m-4 font-normal"
 
 const variantStyles = {
     "primary" : "bg-purple-600 text-white ",
