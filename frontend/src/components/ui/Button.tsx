@@ -15,7 +15,7 @@ const sizeStyle = {
     "lg" : "py-6 px-8",
 }
 
-const defaultStyle = "rounded-md flex"
+const defaultStyle = "rounded-md flex items-center m-4"
 
 const variantStyles = {
     "primary" : "bg-purple-600 text-white ",
@@ -23,6 +23,8 @@ const variantStyles = {
 }
 
 export const Button =(props:ButtonProps)=>{
-    return <button className={`${variantStyles[props.variant]} ${sizeStyle[props.size]} ${defaultStyle}`}>{props.startIcon ? <div className="pr-2">{props.startIcon }</div>:null}
-    {props.text} {props.EndIcon}</button>
+    return <button className={`${variantStyles[props.variant]} ${sizeStyle[props.size]} ${defaultStyle}`}>
+        {props.startIcon ? <div className="pr-2">{props.startIcon }</div>:null}
+        {props.text}{props.EndIcon ? <div className="pl-2">{props.EndIcon }</div>:null}
+        </button>
 }
