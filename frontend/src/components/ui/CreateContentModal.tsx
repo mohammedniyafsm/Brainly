@@ -13,7 +13,6 @@ interface CreateContentModalProps {
 }
 
 
-
 export const CreateContentModal: React.FC <CreateContentModalProps> = ({open,onClose}) => {
   return (
     <div>
