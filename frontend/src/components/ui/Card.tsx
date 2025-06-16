@@ -9,7 +9,8 @@ interface CardProps {
 export const Card =(props:CardProps)=>{
     return(
         <div className="flex gap-10">
-        <div className="bg-white-100 rounded-lg max-w-80 p-6 shadow-md ">
+        <div className="bg-white-100 rounded-2xl
+         max-w-80 p-6  shadow-md ">
             <div className="flex justify-between items-center ">
                 <div className="flex items-center text-lg ">
                    <div className="pr-4"><ShareIcon size="md"/></div> 
@@ -35,8 +36,13 @@ export const Card =(props:CardProps)=>{
                     <div className=""><DeleteIcon size="md"/> </div>    
                 </div>
             </div>
-            <div className="pt-8 ">
-                <blockquote className="twitter-tweet -full rounded-md"><p lang="en" dir="ltr">At dawn from the gateway to Mars, the launch of Starship’s second flight test <a href="https://t.co/ffKnsVKwG4">pic.twitter.com/ffKnsVKwG4</a></p>&mdash; SpaceX (@SpaceX) <a href="https://twitter.com/SpaceX/status/1732824684683784516?ref_src=twsrc%5Etfw">December 7, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            <div className="pt-2 ">
+                <div className="overflow-hidden rounded-md h-[290px]">
+                <blockquote className="twitter-tweet "><p lang="en" dir="ltr">At dawn from the gateway to Mars, the launch of Starship’s second flight test <a href="https://t.co/ffKnsVKwG4">pic.twitter.com/ffKnsVKwG4</a></p>&mdash; SpaceX (@SpaceX) <a href="https://twitter.com/SpaceX/status/1732824684683784516?ref_src=twsrc%5Etfw">December 7, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+            </div>
+            </div>
+            <div className="">
+                <h1></h1>
             </div>
         </div>
         </div>

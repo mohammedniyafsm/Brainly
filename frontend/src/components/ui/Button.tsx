@@ -22,9 +22,9 @@ const variantStyles = {
     "secondary" : "bg-purple-300 text-purple-600",
 }
 
-export const Button =(props:ButtonProps)=>{
-    return <button className={`${variantStyles[props.variant]} ${sizeStyle[props.size]} ${defaultStyle}`}>
-        {props.startIcon ? <div className="pr-2">{props.startIcon }</div>:null}
-        {props.text}{props.EndIcon ? <div className="pl-2">{props.EndIcon }</div>:null}
+export const Button =({variant,size,startIcon,EndIcon,text,onclick} : ButtonProps)=>{
+    return <button className={`${variantStyles[variant]} ${sizeStyle[size]} ${defaultStyle}`} onClick={onclick}>
+        {startIcon ? <div className="pr-2">{startIcon }</div>:null}
+        {text}{EndIcon ? <div className="pl-2">{EndIcon }</div>:null}
         </button>
 }
