@@ -7,3 +7,5 @@ export const iconsizeVariant = {
     "md" : "size-4",
     "lg" : "size-6",
 }
+
+export const defaultStyle = "cursor-pointer";

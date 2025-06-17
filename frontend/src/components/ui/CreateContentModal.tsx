@@ -28,7 +28,7 @@ export const CreateContentModal: React.FC <CreateContentModalProps> = ({open,onC
             <div className="bg-white h-96 w-96 rounded-md shadow-xl ">
               <div className="flex justify-between p-6 items-center">
                 <h1>Add Content</h1>
-                <button onClick={onClose}>
+                <button  onClick={onClose}>
                   <CloseIcon size="lg" />
                 </button>
               </div>
