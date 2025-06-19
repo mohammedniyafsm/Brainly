@@ -12,7 +12,7 @@ import type { ReactElement } from "react"
 const sizeStyle = {
     "sm" : "py-1 px-2",
     "md" : "py-2 px-4",
-    "lg" : "py-6 px-8",
+    "lg" : "py-2 px-10",
 }
 
 const defaultStyle = "rounded-md flex items-center m-2 cursor-pointer font-normal"
