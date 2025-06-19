@@ -1,44 +1,51 @@
 import mongoose ,{Document,Model,Schema,model} from "mongoose";
 
-const contentType = ['documents','tweet', 'youtube', 'link']
+const contentTypes = ['Document','Twitter', 'Youtube', 'Link']
 
-export interface IContent extends Document {
-    userId:mongoose.Types.ObjectId;
+export interface IContentItem extends Document {
+    _id:mongoose.Types.ObjectId;
+    title:string;
     type : string;
     link :string;
-    title:string;
-    tags:mongoose.Types.ObjectId[];
-    _id:mongoose.Types.ObjectId;
+    // tags:mongoose.Types.ObjectId[];
+}
+
+export const contentItemSchema : Schema <IContentItem> = new Schema({
+  title: {
+    type: String,
+    required: true,
+    trim: true,
+  },
+  type: {
+    type: String,
+    required: true,
+    enum: contentTypes,
+  },
+  link: {
+    type: String,
+    required: true,
+  },
+});
+
+
+export interface IContent extends Document {
+    userId : mongoose.Types.ObjectId,
+    _id : mongoose.Types.ObjectId,
+    content:IContentItem[],
 }
 
 const contentSchema : Schema <IContent> = new Schema ({
     userId : {
-        type:Schema.Types.ObjectId,
-        ref:'User',
-        required:true,
-    },
-    type : {
-        type : String,
-        required : true,
-        enum : {
-            values:contentType,
-        }
-    },
-    link : {
-        type : String,
+        type :Schema.Types.ObjectId,
+        ref : 'User',
         required : true,
     },
-    title: {
-        type: String,
-        required: [true, 'Title is required'],
-        trim: true,
-    },
-     tags: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Tag',
-    },
-  ],
+    content : {
+        type :[contentItemSchema],
+        required : true
+    }
+
+
 })
 
 const Content : Model <IContent> = mongoose.model<IContent>('Content',contentSchema);
