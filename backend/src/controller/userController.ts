@@ -12,7 +12,7 @@ export const signUp = async (req: Request, res: Response): Promise<void> => {
     }
     const user = new User({ username, email, password });
     await user.save();
-    const token = await generateToken(user._id.toString());
+    // const token = await generateToken(user._id.toString());
     res.status(201).json({ message: "Account created successfully" });
     return;
   } catch (error) {
@@ -24,7 +24,7 @@ export const signUp = async (req: Request, res: Response): Promise<void> => {
 export const Login = async (req: Request, res: Response): Promise<void> => {
   try {
     const { email, password } = req.body;
-    const emailExist = (await User.findOne({ email })) as IUser | null;
+    const emailExist = (await User.findOne({ email }));
     if (!emailExist) {
       res.status(400).json({ message: "Account doesn't exist. Please sign up." });
       return;
