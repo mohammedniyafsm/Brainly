@@ -2,8 +2,8 @@ import mongoose ,{Document,Model,Schema,model} from "mongoose";
 
 const contentTypes = ['Document','Twitter', 'Youtube', 'Link']
 
-export interface IContentItem extends Document {
-    _id:mongoose.Types.ObjectId;
+export interface IContentItem   {
+    _id?:mongoose.Types.ObjectId;
     title:string;
     type : string;
     link :string;
