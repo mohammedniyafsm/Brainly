@@ -10,11 +10,11 @@ export const Card =(props:CardProps)=>{
     return(
         <div className="flex gap-10">
         <div className="bg-white-100 rounded-2xl
-         max-w-80 p-6  shadow-md ">
+         max-w-80 p-6  shadow-sm border border-gray-200 ">
             <div className="flex justify-between items-center ">
                 <div className="flex items-center text-lg ">
                    <div className="pr-4"><ShareIcon size="md"/></div> 
-                    <h1>Project Idea</h1>
+                    <h1 className="font-medium font-inter text-md">Project Idea</h1>
                 </div>
                 <div className="flex text-gray-500 ">
                     <div className="pr-4"> <ShareIcon size="md"/></div>
@@ -25,7 +25,7 @@ export const Card =(props:CardProps)=>{
                 <iframe className="w-full rounded-md" src="https://www.youtube.com/embed/iGvNCo62Wb4?si=arf-SkbPQfbXvjH8" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
             </div>
         </div>
-        <div className="bg-white-100 rounded-lg max-w-80 p-6 shadow-md ">
+        <div className="bg-white-100 rounded-2xl max-w-80 p-6 shadow-sm border border-gray-200 ">
             <div className="flex justify-between items-center ">
                 <div className="flex items-center text-lg ">
                    <div className="pr-4"><ShareIcon size="md"/></div> 
