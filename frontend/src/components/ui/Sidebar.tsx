@@ -1,21 +1,19 @@
-import { DeleteIcon } from "../icons/Delete"
-import { SidebarItem } from "./SidebarItem"
+import { SidebarItem } from "./SidebarItem";
+import brain from "../../assets/brain.png";
 
+export const Sidebar = () => {
+  return (
+    <div className="h-screen w-72 bg-white border-r border-gray-200 fixed left-0 top-0 shadow-lg">
+      {/* Logo Section */}
+      <div className="flex items-center px-6 py-4 gap-2 cursor-pointer">
+        <img src={brain} alt="Second Brain Logo" className="h-8" />
+        <h1 className="text-2xl font-bold text-gray-900 font-inter">
+          Second Brain
+        </h1>
+      </div>
 
-export const Sidebar=()=>{
-    return (
-
-    <>
-    <div className="h-screen w-72 bg-white-100 border-r-gray-400 fixed left-0 top-0 shadow-lg">
-        <div className="flex items-center p-6 gap-2 cursor-pointer">
-            <DeleteIcon size="lg"/>
-            <h1 className="text-2xl font-medium">Second Brain</h1>
-        </div>
-        <div className="">
-        <SidebarItem/>
-        </div>
+      {/* Sidebar Items */}
+      <SidebarItem />
     </div>
-    </>
-    )
-    
-}
+  );
+};

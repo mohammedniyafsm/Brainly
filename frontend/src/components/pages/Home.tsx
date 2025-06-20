@@ -10,7 +10,7 @@ export const Home = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className="bg-gray-100 w-full h-screen flex">
+    <div className="bg-white-100 w-full h-screen flex">
       {/* Sidebar Section */}
       <Sidebar />
 
@@ -19,21 +19,21 @@ export const Home = () => {
         <CreateContentModal open={isOpen} onClose={() => setIsOpen(false)} />
 
         {/* Header Section */}
-        <div className="flex items-center justify-between px-8 py-4 ">
+        <div className="flex items-center justify-between px-8 py-8 ">
           <div className="pl-8">
-            <h1 className="text-2xl font-medium text-[#222222]">All Notes</h1>
+            <h1 className="font-medium font-inter text-xl text-gray-900 ">All Notes</h1>
           </div>
-          <div className="flex items-center">
+          <div className="flex items-center gap-4">
             <Button
               variant="secondary"
-              size="md"
+              size="lg"
               text="Share Brain"
               onclick={() => {}}
               startIcon={<ShareIcon size="md" />}
             />
             <Button
               variant="primary"
-              size="md"
+              size="lg"
               text="Add Content"
               onclick={() => setIsOpen(true)}
               startIcon={<PlusIcon size="md" />}
