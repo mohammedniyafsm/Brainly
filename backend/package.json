@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-"scripts": {
-  "build": "tsc -b",
-  "start": "node dist/index.js",
-  "dev": "concurrently \"tsc --watch\" \"nodemon dist/index.js\""
-},
+  "scripts": {
+    "build": "tsc -b",
+    "start": "node dist/index.js",
+    "dev": "concurrently \"tsc --watch\" \"nodemon dist/index.js\""
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/mohammedniyafsm/Brainly.git"
@@ -30,8 +30,10 @@
     "typescript": "^5.8.3"
   },
   "dependencies": {
+    "@types/cors": "^2.8.19",
     "bcrypt": "^6.0.0",
     "brcypt": "^1.0.1",
+    "cors": "^2.8.5",
     "express": "^5.1.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.15.0"
