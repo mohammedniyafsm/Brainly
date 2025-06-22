@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { useLogin } from '../hooks/User';
 import { toast } from 'react-hot-toast';
 import { AxiosError } from 'axios';
+import { useAuth } from '../../context/store';
 
 const loginSchema = z.object({
   email: z.string().email("Invalid Email Address"),
@@ -16,6 +17,7 @@ type FormData = z.infer<typeof loginSchema>;
 export const Login = () => {
   const navigate = useNavigate();
   const { mutate: login, isPending } = useLogin();
+  const { storeTokenInLS } = useAuth();
 
   const {
     register,
@@ -28,7 +30,8 @@ export const Login = () => {
 
   const loginSubmit = (data: FormData) => {
     login(data, {
-      onSuccess: () => {
+      onSuccess: (response) => {
+        storeTokenInLS(response.token)
         toast.success("Login successful!");
         reset(); // clear the form
         navigate('/');
