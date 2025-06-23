@@ -16,3 +16,8 @@ export const loginUser = async (data: {
   const res = await axios.post("http://localhost:3000/api/users/login", data); 
   return res.data;
 };
+
+export const getContent = async ()=>{
+  const res = await axios.get("http://localhost:3000/api/users/content");
+  return res.data.content;
+}
