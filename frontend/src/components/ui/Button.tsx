@@ -2,7 +2,7 @@ import type { ReactElement } from "react";
 
 interface ButtonProps {
   variant: "primary" | "secondary";
-  size: "sm" | "md" | "lg";
+  size: "sm" | "md" | "lg" | "xl";
   text: string;
   startIcon?: ReactElement;
   EndIcon?: ReactElement;
@@ -13,6 +13,7 @@ const sizeStyle = {
   sm: "py-1 px-3 text-sm",
   md: "py-1.5 px-4 text-sm",
   lg: "py-2 px-6 text-base",
+  xl: "py-2 px-30 text-base"
 };
 
 const variantStyles = {
