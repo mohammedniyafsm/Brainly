@@ -5,6 +5,8 @@ import {
   getContent,
   addContent,
   deleteContent,
+  shareContentLink,
+  fetchSharedContent
 } from "../api/authApi";
 
 interface DeletePayload {
@@ -52,3 +54,19 @@ export const useDeleteContent = () => {
     mutationFn: ({ id, token }: DeletePayload) => deleteContent(id, token),
   });
 };
+
+export const useShareLink = () => {
+  return useMutation({
+    mutationFn: (data: { share: boolean; token: string }) =>
+      shareContentLink(data.share, data.token),
+  });
+};
+
+
+export const useSharedContent = (hash: string) => {
+  return useQuery({
+    queryKey: ["sharedContent", hash],
+    queryFn: () => fetchSharedContent(hash),
+    enabled: !!hash, // only run if hash exists
+  });
+}

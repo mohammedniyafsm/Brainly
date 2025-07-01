@@ -68,3 +68,25 @@ export const deleteContent = async (_id: string, token: string) => {
 
   return res.data;
 };
+
+export const shareContentLink = async (share: boolean, token: string) => {
+  const res = await axios.post(
+    `${BASE_URL}/shareBrain`,
+    { share },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+  return res.data;
+};
+
+
+export const fetchSharedContent = async (hash: string) => {
+  const response = await axios.get(`http://localhost:3000/api/users/${hash}`);
+  const shared = response.data.content?.[0];
+
+  if (!shared) throw new Error("No shared content found");
+  return shared;
+};
